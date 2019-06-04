@@ -336,6 +336,75 @@ A virtual type allows you to create an instance of an existing class that has cu
 #### 1.5. Demonstrate Ability To Use Plugins
 > How are plugins used in core code? How can they be used for customizations?
 
+A plugin is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that call. This allows you to customise or extend the behavior of original, public methods for any class or interface.
+
+##### Before Plugin
+Before plugins are used when you want to modify the function input. To modify the input of a function:
+```PHP
+public function beforeFunctionName(
+    Class\Containing\The\Function $subject,
+    $normalFunctionInput1,
+    $normalFunctionInput2,
+) {
+    // ...
+    
+    return [$normalFunctionInput1, $normalFunctionInput2];
+}
+```
+
+The `return` value determines the array of arguments being passed into the next plugin or targeted function.
+
+##### After Plugin
+After plugins are used when you want to modify the function output. To modify the output of a function:
+```PHP
+public function afterFunctionName(
+    Class\Containing\The\Function $subject,
+    $result
+) {
+    // ...
+    
+    return $result;
+}
+```
+
+The `return` value determines the output of the function being passed into the next plugin or targeted function.
+
+##### Around Plugin
+Around plugins give you full control over the function, it's inputs, and it's output. To use an around plugin to replace a function:
+```PHP
+public function aroundFunctionName(
+    Class\Containing\The\Function $subject,
+    callable $proceed
+) {
+    // ...
+    
+    $result = $proceed();
+    
+    // ...
+    
+    return $result;
+    
+}
+```
+
+##### Declaring Plugins
+To declare a plugin, add a `<type/>` to your module's `di.xml`:
+```XML
+<type name="Class\Containing\The\Function\To\Plug\Into">
+    <plugin name="PluginName"
+            type="Class\Containing\Your\Plugin"
+            disabled="false"
+            sortOrder="10"
+    />
+</type>
+```
+
+##### Plugin Limitations
+Plugins have the following limitations:
+- Only work with **public** functions
+- **Do not** work with `final` classes or functions
+- **Do not** work with `static` functions
+
 ---
 #### 1.6. Configure Event Observers & Scheduled Joba
 > How are observers registered?
