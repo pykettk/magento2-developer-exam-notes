@@ -406,8 +406,49 @@ Plugins have the following limitations:
 - **Do not** work with `static` functions
 
 ---
-#### 1.6. Configure Event Observers & Scheduled Joba
+#### 1.6. Configure Event Observers & Scheduled Jobs
+Observers listen for events that are triggered in Magento. Scheduled jobs perform an action at a specified interval.
+
+Observers **MUST** implement the `Magento\Framework\Event\ObserverInterface`.
+
+---
 > How are observers registered?
+
+Create an `<event/>` node in your `etc/[area]/events.xml` file:
+```XML
+<event name="event_for_your_observer_to_listen_for">
+    <observer name="observerName"
+              instance="Your\Observer\Class"
+    />
+</event>
+```
+
+---
+> How are they scoped for frontend or backend?
+
+Place the `events.xml` file in the `etc/frontend/` and `etc/adminhtml/` directories respectively.
+
+---
+> How are automatic events created, and how should they be used?
+
+Events should be used when you do not want to change the data. They can be triggered by injecting an instance of `Magento\Framework\Event\ManagerInterface` into the constructor and calling: `$this->eventManager->dispatch('event_name', [params]);`.
+
+---
+> How are scheduled jobs configured?
+
+To configure a scheduled job you need to assign it a name, specify the function it should execute, the class that function belongs to, and set the schedule using the regular cron schedule notatation. Scheduled jobs are specified in the `etc/crontab.xml` file:
+```XML
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="cron_job_name"
+             instance="Path\To\Your\Class"
+             method="execute">
+            <schedule>*/5 * * * *</schedule>
+        </job>
+    </group>
+</config>
+```
 
 ---
 > How are they scoped for frontend or backend?
