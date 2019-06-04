@@ -29,7 +29,7 @@ The pass grade is **68%**.
 This section covers **33%** of the exam.
 
 #### 1.1. Describe the Magento Module-Based Architecture
-> What are the significant steps to add a new module?</span>
+> What are the significant steps to add a new module?
 
 You need to create the following files:
 - `registration.php`
@@ -102,7 +102,7 @@ This file provides a component name and specifies the your module's dependencies
 ```
 
 ---
-> What are the different Composer package types?</span>
+> What are the different Composer package types?
 
 | Name | Package Type | Description |
 | :--: | :----------: | :---------- |
@@ -112,11 +112,11 @@ This file provides a component name and specifies the your module's dependencies
 | Language Package | magento2-language | Translations for the storefront or Admin. |
 
 ---
-> When would you place a module in the app/code folder versus another location?</span>
+> When would you place a module in the app/code folder versus another location?
 
 ---
 #### 1.2. Describe the Magento Directory Structure
-> How do you locate different files in Magento?</span>
+> How do you locate different files in Magento?
 
 All of the core Magento files are located in the `vendor/magento/` directory with some supporting JavaScript and CSS files being stored in `lib/`.
 
@@ -214,14 +214,14 @@ This directory contains the XML configuration for UI components. They are used t
 checkout on the frontend is also a UI component.
 
 ---
-> What are the naming conventions, and how are namespaces established?</span>
+> What are the naming conventions, and how are namespaces established?
 
 ---
-> How can you identify the files responsible for some functionality?</span>
+> How can you identify the files responsible for some functionality?
 
 ---
 #### 1.3. Utilise Configuration and Configuration Variables Scope
-> Which configuration files are important in the development cycle?</span>
+> Which configuration files are important in the development cycle?
 
 ##### `acl.xml`
 Defines permissions for accessing protected resources.
@@ -268,20 +268,20 @@ Configuration for the menu in Magento Admin.
 Configures tabs, sections, groups, and fields found in `Store > Configuration` in Magento Admin.
 
 ---
-> How do you identify the configuration scope for a given variable?</span>
+> How do you identify the configuration scope for a given variable?
 
 ---
-> How do native Magento scopes (for example, price or inventory) affect development and decision-making processes?</span>
+> How do native Magento scopes (for example, price or inventory) affect development and decision-making processes?
 
 ---
-> How can you fetch a system configuration value programmatically?</span>
+> How can you fetch a system configuration value programmatically?
 
 ---
-> How can you override system configuration values for a given store using XML configuration?</span>
+> How can you override system configuration values for a given store using XML configuration?
 
 ---
 #### 1.4. Demonstrate How To Use Dependency Injection
-> How are objects realized in code?</span>
+> How are objects realized in code?
  
 Since dependency injection happens automatically through the constructor, Magento
 must handle class creation - either at the time of injection or via a factory.
@@ -298,13 +298,13 @@ The deploy mode (`bin/magento deploy:mode:show)` determines which class loader i
 ##### Class Creation Via Factories
 
 ---
-> Why is it important to have a centralized object creation process?</span>
+> Why is it important to have a centralized object creation process?
 
 Having a centralised process to create objects makes testing much easier. It also
 provides a simple interface to substitute objects as well as modify existing ones.
 
 ---
-> How can you override a native class, inject your class into another object, and use other techniques available in `di.xml` (for example, `virtualTypes`)?</span>
+> How can you override a native class, inject your class into another object, and use other techniques available in `di.xml` (for example, `virtualTypes`)?
 
 ##### Overriding Native Classes
 Preferences are used to substitute entire classes. They can also be used to specify concrete classes for interfaces:
@@ -324,11 +324,11 @@ Specify a `<type>` entry with your class as an `<argument>`:
 A virtual type allows you to create an instance of an existing class that has custom constructor arguments. This is useful in cases where you need a “new” class only because the constructor arguments need to be changed. This is used frequently in Magento to reduce redundant PHP classes.
 
 ---
-> How would you obtain a class instance from different places in the code?</span>
+> How would you obtain a class instance from different places in the code?
 
 ---
 #### 1.5. Demonstrate Ability To Use Plugins
-> How are plugins used in core code? How can they be used for customizations?</span>
+> How are plugins used in core code? How can they be used for customizations?
 
 ---
 #### 1.6. Configure Event Observers & Scheduled Joba
