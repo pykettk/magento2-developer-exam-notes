@@ -1,4 +1,5 @@
 ![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
+![GitHub last commit (master)](https://img.shields.io/github/last-commit/pykettk/magento2-associate-developer-certification/master.svg)
 
 # Magento 2 Associate Developer Certification Study Guide
 ## Tips & Useful Information
