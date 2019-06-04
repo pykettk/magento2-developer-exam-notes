@@ -317,7 +317,13 @@ Preferences are used to substitute entire classes. They can also be used to spec
 ##### Injecting Your Class into Other Objects
 Specify a `<type>` entry with your class as an `<argument>`:
 ```XML
-
+<type name="Path\To\Your\Class\To\Inject\Into">
+    <arguments>
+        <argument xsi:type="object">
+            Path\To\Your\Injected\Class
+        </argument>
+    </arguments>
+</type>
 ```
 
 ##### Virtual Types
