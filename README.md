@@ -1,3 +1,8 @@
+![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
+![Study Guide](https://img.shields.io/badge/documentation-study_guide-blue.svg)
+![GitHub last commit (master)](https://img.shields.io/github/last-commit/pykettk/magento2-associate-developer-certification/master.svg)
+![License](https://img.shields.io/github/license/pykettk/magento2-associate-developer-certification.svg)
+
 # Magento 2 Associate Developer Certification Study Guide
 ## Tips & Useful Information
 The exam includes questions relating to Magento Admin - more than you would expect. It is worth knowing some of the more common features and areas:
