@@ -100,6 +100,7 @@ This file provides a component name and specifies the your module's dependencies
     }
 }
 ```
+
 ---
 > What are the different Composer package types?</span>
 
@@ -113,6 +114,7 @@ This file provides a component name and specifies the your module's dependencies
 ---
 > When would you place a module in the app/code folder versus another location?</span>
 
+---
 #### 1.2. Describe the Magento Directory Structure
 > How do you locate different files in Magento?</span>
 
@@ -217,6 +219,7 @@ checkout on the frontend is also a UI component.
 ---
 > How can you identify the files responsible for some functionality?</span>
 
+---
 #### 1.3. Utilise Configuration and Configuration Variables Scope
 > Which configuration files are important in the development cycle?</span>
 
@@ -276,6 +279,7 @@ Configures tabs, sections, groups, and fields found in `Store > Configuration` i
 ---
 > How can you override system configuration values for a given store using XML configuration?</span>
 
+---
 #### 1.4. Demonstrate How To Use Dependency Injection
 > How are objects realized in code?</span>
  
@@ -322,129 +326,206 @@ A virtual type allows you to create an instance of an existing class that has cu
 ---
 > How would you obtain a class instance from different places in the code?</span>
 
+---
 #### 1.5. Demonstrate Ability To Use Plugins
 > How are plugins used in core code? How can they be used for customizations?</span>
 
+---
 #### 1.6. Configure Event Observers & Scheduled Joba
 > How are observers registered?
+
+---
 > How are they scoped for frontend or backend?
+
+---
 > How are automatic events created, and how should they be used?
+
+---
 > How are scheduled jobs configured?
 
+---
 #### 1.7. Utilise the CLI
 > Which commands are available?
+
+---
 > How are commands used in the development cycle?
 
+---
 ### 2.0 Request Flow Processing
 This section covers **7%** of the exam.
 
 #### 2.1. Describe Magento 2 Modes
 > Understand the pros and cons of using developer mode or production mode.
+
+---
 > How do you enable/disable maintenance mode?
 
+---
 #### 2.2. Demonstrate Abilty To Use Frontend Controllers
 > How do you identify which module/controller corresponds to a given URL?
+
+---
 > What would you do to create a given URL?
 
+---
 #### 2.3. URL Rewrites
 > How is the user-friendly URL of a product or category defined?
+
+---
 > How can you change it?
+
+---
 > How do you determine which page corresponds to a given user-friendly URL?
 
+---
 ### 3.0. Customising The Magento UI
 This section covers **15%** of the exam.
 
 #### 3.1. Customise The Magento UI Using Themes
 > When would you create a new theme?
+
+---
 > How do you define theme hierarchy for a project?
 
+---
 #### 3.2. Blocks & Templates
 > How do you assign a template to a block?
+
+---
 > How do you assign a different template to a native block?
 
+---
 #### 3.3. Identify Different Types Of Blocks
 > When would you use non-template block types?
 
+---
 #### 3.4. Magento Layout XML
 > How do you use layout XML directives in your customizations?
+
+---
 > How do you register a new layout file?
 
+---
 #### 3.5. Create & Add Code & Markup To A Page
 > How do you add new content to existing pages using layout XML?
 
+---
 ### 4.0. Working With Databases In Magento
 This section covers **18%** of the exam.
 
 #### 4.1. Models, Resource Models, And Collections
 > What are the responsibilities of each of the ORM object types?
+
+---
 > How do they relate to one another?
 
+---
 #### 4.2. Entity Loading And Saving
 > How do you use the native Magento save/load process in the development process?
 
+---
 #### 4.3. Filter, Sort, And Select From Collections & Repositories
 > How do you select a subset of records from the database?
 
+---
 #### 4.4. Declarative Schema
 > How do you add a column using declarative schema?
+
+---
 > How do you modify a table added by another module?
+
+---
 > How do you delete a column?
+
+---
 > How do you add an index or foreign key using declarative schema?
+
+---
 > How do you manipulate data using data patches?
+
+---
 > What is the purpose of schema patches?
 
+---
 ### 5.0. Developing With Adminhtml
 This section covers **11%** of the exam.
 
 #### 5.1. Admin Routes
 > How would you create an admin controller?
+
+---
 > How do you ensure the right level of security for a new controller?
 
+---
 #### 5.2. System Configuration & Scopes
 > How would you add a new system configuration option?
+
+---
 > What is the difference in this process for different option types (secret, file)?
 
+---
 #### 5.3. ACL
 > How would you add a new ACL resource to a new entity?
+
+---
 > How do you manage the existing ACL hierarchy?
 
+---
 #### 5.4. Setup A Menu Item
 > How do you add a new menu item to a given tab?
+
+---
 > How do you add a new tab to the Admin menu?
 
+---
 #### 5.5. Create User Permissions
 > How are menu items related to ACL permissions?
+
+---
 > How do you add a new user with given set of permissions?
 
+---
 ### 6.0. Customising Magento Business Logic
 This section covers **16%** of the exam.
 
 #### 6.1. Product Types
 > How would you obtain a product of a specific type, and what tools (in general) does a product type model provide? 
 
+---
 #### 6.2. Category Properties
 > How do you create and manage categories?
 
+---
 #### 6.3. Product/Category Relations
 > How do you assign and unassign products to categories?
 
+---
 #### 6.4. Product Behaviour In The Cart
 > How are configurable and bundle products rendered?
+
+---
 > How can you create a custom shopping cart renderer?
 
+---
 #### 6.5. Native Shipping Functionality
 > How do you customize the shipment step of order management?
 
+---
 #### 6.6. Customer Account Area Customisation
 > How would you add another tab in the “My Account” section?
+
+---
 > How do you customize the order history page?
 
+---
 #### 6.7. Add/Modify Customer Attributes
 > How do you add or modify customer attributes in a setup script?
 
+---
 #### 6.8. Customising Customer Addresses
 > How do you add another field to the customer address entity using a setup script?
 
+---
 ## References
 ### Magento 2 Dev Docs
 [Component Load Order](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-load-order.html)
