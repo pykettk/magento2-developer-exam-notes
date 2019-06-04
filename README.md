@@ -1,3 +1,5 @@
+![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
+
 # Magento 2 Associate Developer Certification Study Guide
 ## Tips & Useful Information
 The exam includes questions relating to Magento Admin - more than you would expect. It is worth knowing some of the more common features and areas:
