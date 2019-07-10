@@ -704,12 +704,38 @@ This section covers **15%** of the exam.
 #### 3.2. Blocks & Templates
 > How do you assign a template to a block?
 
+To assign a template to a block:
+```XML
+<block class="Namespace\Of\Your\Class"
+       name="blockName"
+       template="Module_Name::path/to/your/template.phtml"
+/>
+```
+
+**NB:** The `path/to/your/template.phtml` starts from the `templates/` directory.
+
 ---
 > How do you assign a different template to a native block?
+
+To assign a template to an existing block, pass an argument to the block:
+```XML
+<referenceBlock name="blockName">
+    <action method="setTemplate">
+        <argument name="template" xsi:type="string">
+            Module_Name::path/to/your/template.phtml
+        <argument>
+    </action>
+</referenceBlock>
+```
 
 ---
 #### 3.3. Identify Different Types Of Blocks
 > When would you use non-template block types?
+
+| Block Type | Path | Use |
+| :--------: | :--: | :-: |
+| Text | `vendor/magento/framework/View/Element/Text.php` | Printing a string |
+| ListText | `vendor/magento/framework/View/Element/Text/ListTest.php` | Output each of the child blocks |
 
 ---
 #### 3.4. Magento Layout XML
