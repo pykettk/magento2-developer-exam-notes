@@ -740,6 +740,15 @@ This section covers **18%** of the exam.
 #### 4.3. Filter, Sort, And Select From Collections & Repositories
 > How do you select a subset of records from the database?
 
+##### Collections
+**Filter:** `$collection->addFieldToFilter()`
+**Sort:** `$collection->addOrder()`
+**Select Column:** `$collection->addFieldToSelect()`
+**Pagination:** `$collection->setPageSize()` and `$collection->setCurPage()`
+
+##### Repositories
+https://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html
+
 ---
 #### 4.4. Declarative Schema
 > How do you add a column using declarative schema?
