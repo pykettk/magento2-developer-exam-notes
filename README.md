@@ -813,6 +813,51 @@ To remove a column from a table created by your module you can simply remove the
 ---
 > How do you add an index or foreign key using declarative schema?
 
+##### Index
+To add an index, declare an `<index />` node in `Your_Company/Your_Module/etc/db_schema.xml`:
+```XML
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_create_by_other_module">
+        ...
+        <index referenceId="INDEX_NAME" indexType="btree">
+            <column name="column_name" />
+        </index>
+        ...
+    </table>
+</schema>
+```
+
+##### Foreign Key
+To add a foreign key, declare a `<constraint />` node with an `xsi:type` of `foreign` in `Your_Company/Your_Module/etc/db_schema.xml`:
+```XML
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_create_by_other_module">
+        ...
+        <constraint xsi:type="foreign"
+                    referenceId="YOUR_REFERENCE_ID"
+                    
+                    <!-- The current table -->
+                    table="table_name"
+                    
+                    <!-- The column in the current table that refers to a column in another table -->
+                    column="column_name"
+                    
+                    <!-- The table being referenced -->
+                    referenceTable=""
+                    
+                    <!-- The column being referenced -->
+                    referenceColumn=""
+                    
+                    <!-- Foreign key trigger (CASCADE/SET/NULL/NO ACTION) -->
+                    onDelete="CASCADE"
+        />
+        ...
+    </table>
+</schema>
+```
+
 ---
 > How do you manipulate data using data patches?
 
