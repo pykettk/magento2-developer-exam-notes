@@ -850,3 +850,10 @@ This section covers **16%** of the exam.
 [Plugins (Interceptors)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html)
 
 [About Magento Modes](https://devdocs.magento.com/guides/v2.3/config-guide/bootstrap/magento-modes.html)
+
+[Layout Instructions](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html)
+
+[Product Types](https://docs.magento.com/m2/ee/user_guide/catalog/product-types.html)
+
+[Declarative Schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/)
+
