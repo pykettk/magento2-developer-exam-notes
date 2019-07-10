@@ -834,6 +834,16 @@ public function getBundleProducts()
 ```
 
 ---
+> What tools (in general) does a product type model provide?
+
+The product type model is responsible for:
+- Loading and configuring product options
+- Preparing the product for the cart
+- Processing product data to/from the database
+- Checking whether the product can be sold
+- Loading child products, when applicable
+
+---
 #### 6.2. Category Properties
 > How do you create and manage categories?
 
