@@ -39,7 +39,6 @@ This section covers **33%** of the exam.
 You need to create the following files:
 - `registration.php`
 - `module.xml`
-- `composer.json`
 
 ##### `registration.php`
 This file is included by the Composer autoloader and is added to the static list of components in `Magento\Framework\Component\ComponentRegistrar`. Example:
@@ -75,35 +74,6 @@ Example:
         </sequence>
     </module>
 </config>
-```
-
-##### `composer.json`
-This file provides a component name and specifies the your module's dependencies. Example:
-```JSON
-{
-    "name": "your-company/your-module",
-    "description": "Your module description",
-    "require": {
-        "php": "~7.1.3||~7.2.0",
-        "magento/module-store": "102.1",
-        "magento/module-catalog": "102.1",
-        "magento/module-catalog-inventory": "102.1",
-        "magento/module-ui": "self.version",
-        "magento/magento-composer-installer": "*"
-    },
-    "suggest": {
-      "magento/module-webapi": "102.1"
-    },
-    "type": "magento2-module",
-    "version": "102.1",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "autoload": {
-        "files": [ "registration.php" ]
-    }
-}
 ```
 
 ---
