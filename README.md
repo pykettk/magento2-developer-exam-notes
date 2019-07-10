@@ -765,6 +765,15 @@ This section covers **18%** of the exam.
 #### 4.3. Filter, Sort, And Select From Collections & Repositories
 > How do you select a subset of records from the database?
 
+##### Collections
+**Filter:** `$collection->addFieldToFilter()`
+**Sort:** `$collection->addOrder()`
+**Select Column:** `$collection->addFieldToSelect()`
+**Pagination:** `$collection->setPageSize()` and `$collection->setCurPage()`
+
+##### Repositories
+https://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html
+
 ---
 #### 4.4. Declarative Schema
 Declarative schema in Magento 2.3 allows developers to declare the final desired state of the database and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. Additionally, this approach allows data be deleted when a module is uninstalled - something that previously had to be done separately.
