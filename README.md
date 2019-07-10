@@ -729,6 +729,12 @@ This section covers **18%** of the exam.
 #### 4.1. Models, Resource Models, And Collections
 > What are the responsibilities of each of the ORM object types?
 
+The Magento ORM elements are:
+- **Models:** Define entities, their data, and their behaviour.
+- **Resource Models:** Data mappers for storage structures.
+- **Collections:** Stores sets of Models and related functionality including filtering, sorting, and pagination.
+- **Resources:** Maintain database connections through adapters.
+
 ---
 > How do they relate to one another?
 
