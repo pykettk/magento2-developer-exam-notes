@@ -855,6 +855,8 @@ To add an additional menu tab in the customer "My Account" area create the layou
 ---
 > How do you customize the order history page?
 
+To customise the "Order History" page create the layout file in `Your_Company/Your_Module/view/frontend/layout/sales_order_history.xml`. The `sales.order.history.info` container is a common location for modifications to be made.
+
 ---
 #### 6.7. Add/Modify Customer Attributes
 > How do you add or modify customer attributes in a setup script?
