@@ -426,15 +426,6 @@ To configure a scheduled job you need to assign it a name, specify the function 
 ```
 
 ---
-> How are they scoped for frontend or backend?
-
----
-> How are automatic events created, and how should they be used?
-
----
-> How are scheduled jobs configured?
-
----
 #### 1.7. Utilise the CLI
 > Which commands are available?
 
