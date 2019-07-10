@@ -808,6 +808,13 @@ This section covers **16%** of the exam.
 #### 6.2. Category Properties
 > How do you create and manage categories?
 
+Categories can be created through the Magento Admin via `Catalog > Inventory > Categories` and have a tree structure.
+
+Categories can also be created through code:
+```PHP
+
+```
+
 ---
 #### 6.3. Product/Category Relations
 > How do you assign and unassign products to categories?
