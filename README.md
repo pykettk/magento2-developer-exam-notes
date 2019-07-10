@@ -814,7 +814,24 @@ This section covers **16%** of the exam.
 | Gift Card | There are three kinds of gift cards: virtual gift cards which are sent by email, physical gift cards which are shipped to the recipient, and combined gift cards which are a combination of the two. Each has a unique code, that is redeemed during checkout. Gift cards can also be included in a grouped product. |
 
 ---
-> How would you obtain a product of a specific type, and what tools (in general) does a product type model provide? 
+> How would you obtain a product of a specific type? 
+
+To obtain a specific product type, build search criteria and retrieve them from the product repository:
+```PHP
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Bundle\Model\Product\Type;
+
+...
+
+public function getBundleProducts()
+{
+    $searchCriteria = $this->searchCriteriaBuilder
+        ->addFilter(ProductInterface::TYPE_ID, Type::TYPE_CODE)
+        ->create();
+    
+    return $this->productRepository->getList($searchCriteria)->getItems();
+}
+```
 
 ---
 #### 6.2. Category Properties
