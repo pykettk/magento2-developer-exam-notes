@@ -759,6 +759,22 @@ Schema Patch
 ---
 > How do you add a column using declarative schema?
 
+Create a schema patch file:
+```XML
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_name">
+        <column xsi:type="varchar"
+                name="title"
+                padding="10"
+                comment="Page Title"
+        />
+    </table>
+</schema>
+```
+
+**NB:** When adding new columns to a table, you also need to generate the `db_schema_whitelist.json` file.
+
 ---
 > How do you modify a table added by another module?
 
