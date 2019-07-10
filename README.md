@@ -3,7 +3,7 @@
 </p>
 
 <h2 align="center">Magento 2 Associate Developer Certification Study Guide</h2>
-
+	
 <div align="center">
 	
 ![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
@@ -12,7 +12,29 @@
 
 </div>
 
-## Tips & Useful Information
+---
+
+<p align="center">
+	A collection of notes for the Magento 2 Associate Developer Certification exam.
+</p>
+
+<br>
+
+## 📝 Table of Contents
+- [Tips & Useful Information](#tips--useful-information)
+- [Exam Structure](#exam-structure)
+- [Exam Content](#exam-content)
+  - [Magento Architecture & Customisation Techniques](#10-magento-architecture--customisation-techniques)
+  - [Request Flow Processing](#20-request-flow-processing)
+  - [Customising Magento UI](#30-customising-the-magento-ui)
+  - [Working with Magento Databases](#40-working-with-databases-in-magento)
+  - [Developing with Adminhtml](#50-developing-with-adminhtml)
+  - [Customising Magento Business Logic](#60-customising-magento-business-logic)
+- [References](#references)
+
+<br>
+
+## 🧐 Tips & Useful Information
 The exam includes questions relating to Magento Admin - more than you would expect. It is worth knowing some of the more common features and areas:
 - Marketing & SEO
 - Category management
@@ -26,7 +48,9 @@ It may be beneficial to set up a throwaway Magento environment to test some of t
 
 To define what UI components are used for certain admin options, these are **SOURCE MODELS**, not Backend or Config models.
 
-## Exam Structure
+<br>
+
+## ⛏️ Exam Structure
 The exam is based on **Magento 2.3.\*** using the **Magento Luma Theme**.
 
 The exam covers both **Open Source & Commerce** versions of Magento.
@@ -37,7 +61,9 @@ There is a **90 minute time limit**.
 
 The pass grade is **68%**.
 
-## Exam Content
+<br>
+
+## ✍️ Exam Content
 ### 1.0. Magento Architecture & Customisation Techniques
 This section covers **33%** of the exam.
 
