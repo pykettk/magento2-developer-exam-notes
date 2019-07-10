@@ -834,6 +834,17 @@ This section covers **16%** of the exam.
 #### 6.7. Add/Modify Customer Attributes
 > How do you add or modify customer attributes in a setup script?
 
+Create `Your_Company/Your_Module/Setup/UpgradeData.php` with an `upgrade()` function:
+```PHP
+use Magento\Customer\Model\Customer;
+
+// ...
+
+$attribute = $this->eavConfig->getAttribute(Customer::ENTITY, Attribute::CUSTOMER_PROMOTION_PREFERENCE);
+$attribute->setData('used_in_forms', ['adminhtml_customer', 'customer_account_edit']);
+$attribute->save();
+```
+
 ---
 #### 6.8. Customising Customer Addresses
 > How do you add another field to the customer address entity using a setup script?
