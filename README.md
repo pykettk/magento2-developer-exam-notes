@@ -787,8 +787,34 @@ This section covers **11%** of the exam.
 #### 5.4. Setup A Menu Item
 > How do you add a new menu item to a given tab?
 
+Adminhtml menu items are configured in `etc/adminhtml/menu.xml`. To add a new menu item, edit this file:
+```XML
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+       <add id="Your_Module::brief_module_description"
+           title="Your Menu Tab Title"
+           translate="title"
+           module="Your_Module"
+           sortOrder="10"
+           
+           <!-- No parent means the tab appears in the side bar -->
+           parent="Magento_Catalog::inventory"
+           
+           <!-- No action means the item acts as a header -->
+           action="path/to/your/controller"
+           
+           <!-- ID of the ACL entry that validates permissions -->
+           resource="ACL_Entry_ID"
+           />
+   </menu>
+</config>
+```
+
 ---
 > How do you add a new tab to the Admin menu?
+
+Do not specify a `parent` attribute in the `<add />` node.
 
 ---
 #### 5.5. Create User Permissions
