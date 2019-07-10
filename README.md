@@ -915,8 +915,35 @@ This section covers **16%** of the exam.
 #### 6.6. Customer Account Area Customisation
 > How would you add another tab in the “My Account” section?
 
+To add an additional menu tab in the customer "My Account" area create the layout file in `Your_Company/Your_Module/view/frontend/layout/customer_account.xml`:
+```XML
+<body>
+    <referenceContainer name="content">
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Customer\Block\Account\SortLinkInterface" 
+                   name="yourBlockName"
+                   after="customer-account-navigation-address-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">
+                        Your Label
+                    </argument>
+                    <argument name="path" xsi:type="string">
+                        path/to/your/module/view/
+                    </argument>
+                    <argument name="sortOrder" xsi:type="number">
+                        10
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </referenceContainer>
+</body
+```
+
 ---
 > How do you customize the order history page?
+
+To customise the "Order History" page create the layout file in `Your_Company/Your_Module/view/frontend/layout/sales_order_history.xml`. The `sales.order.history.info` container is a common location for modifications to be made.
 
 ---
 #### 6.7. Add/Modify Customer Attributes
