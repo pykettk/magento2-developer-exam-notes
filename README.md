@@ -778,6 +778,16 @@ Create a schema patch file:
 ---
 > How do you modify a table added by another module?
 
+To modify a table added by another module, create `Your_Company/Your_Module/etc/db_schema.xml` and specify the table name in the `<table />` node:
+```XML
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_create_by_other_module">
+        ...
+    </table>
+</schema>
+```
+
 ---
 > How do you delete a column?
 
