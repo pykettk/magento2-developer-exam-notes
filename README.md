@@ -1188,7 +1188,46 @@ public function execute()
 This section covers **16%** of the exam.
 
 #### 6.1. Product Types
-> How would you obtain a product of a specific type, and what tools (in general) does a product type model provide? 
+
+| Product Type | Description |
+| :----------: | :---------: |
+| Simple | A simple product is a physical item with a single SKU. Simple products have a variety of pricing and of input controls which makes it possible to sell variations of the product. Simple products can be used in association with grouped, bundle, and configurable products. |
+| Configurable | A configurable product appears to be a single product with lists of options for each variation. However, each option represents a separate, simple product with a distinct SKU, which makes it possible to track inventory for each variation.  |
+| Grouped | A grouped product presents multiple, standalone products as a group. You can offer variations of a single product, or group them for a promotion. The products can be purchased separately, or as a group. |
+| Bundle | A bundle product let customers “build their own” from an assortment of options. The bundle could be a gift basket, computer, or anything else that can be customized. Each item in the bundle is a separate, standalone product. |
+| Virtual | Virtual products are not tangible products, and are typically used for products such as services, memberships, warranties, and subscriptions. Virtual products can be used in association with grouped and bundle products. |
+| Downloadable | A digitally downloadable product that consists of one or more files that are downloaded. The files can reside on your server or be provided as URLs to any other server. |
+| Gift Card | There are three kinds of gift cards: virtual gift cards which are sent by email, physical gift cards which are shipped to the recipient, and combined gift cards which are a combination of the two. Each has a unique code, that is redeemed during checkout. Gift cards can also be included in a grouped product. |
+
+---
+> How would you obtain a product of a specific type? 
+
+To obtain a specific product type, build search criteria and retrieve them from the product repository:
+```PHP
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Bundle\Model\Product\Type;
+
+...
+
+public function getBundleProducts()
+{
+    $searchCriteria = $this->searchCriteriaBuilder
+        ->addFilter(ProductInterface::TYPE_ID, Type::TYPE_CODE)
+        ->create();
+    
+    return $this->productRepository->getList($searchCriteria)->getItems();
+}
+```
+
+---
+> What tools (in general) does a product type model provide?
+
+The product type model is responsible for:
+- Loading and configuring product options
+- Preparing the product for the cart
+- Processing product data to/from the database
+- Checking whether the product can be sold
+- Loading child products, when applicable
 
 ---
 #### 6.2. Category Properties
