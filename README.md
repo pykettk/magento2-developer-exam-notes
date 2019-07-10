@@ -864,6 +864,11 @@ To add a foreign key, declare a `<constraint />` node with an `xsi:type` of `for
 ---
 > What is the purpose of schema patches?
 
+Schema patches are used to make custom database schema modifications:
+- Renaming tables
+- Adding/removing columns
+- Setting primary & foreign keys
+
 ---
 ### 5.0. Developing With Adminhtml
 This section covers **11%** of the exam.
