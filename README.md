@@ -791,6 +791,25 @@ To modify a table added by another module, create `Your_Company/Your_Module/etc/
 ---
 > How do you delete a column?
 
+To remove a column from a table created by your module you can simply remove the corresponding `<column />` node in `Your_Company/Your_Module/etc/db_schema.xml`. To drop a column declared in another module, you must redeclare it and set the `disabled` attribute to `true`:
+```XML
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="table_create_by_other_module">
+        ...
+        <column xsi:type="int"
+                name="new_id"
+                padding="10"
+                unsigned="true"
+                nullable="false"
+                comment="New ID"
+                disabled="true"
+        />
+        ...
+    </table>
+</schema>
+```
+
 ---
 > How do you add an index or foreign key using declarative schema?
 
