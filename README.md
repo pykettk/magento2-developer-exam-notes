@@ -793,8 +793,45 @@ This section covers **11%** of the exam.
 #### 5.5. Create User Permissions
 > How are menu items related to ACL permissions?
 
+Menu items are not shown to users with insufficient permissions to access them.
+
 ---
 > How do you add a new user with given set of permissions?
+
+Navigate to `System > Permissions > All Users` in Magento admin, add a new user, and set their role under `User Information > User Role`.
+
+This can also be done programmatically:
+```PHP
+use Magento\User\Model\UserFactory;
+
+// ...
+
+protected $userFactory;
+
+public function __construct(UserFactory $userFactory)
+{
+    $this->_userFactory = $userFactory;
+}
+
+public function execute()
+{
+    $user = $this->userFactory->create();
+    $user->setData(
+        [
+            'username'          => 'user.name',
+            'firstname'         => 'Forename',
+            'lastname'          => 'Surname',
+            'email'             => 'admin@test.com',
+            'password'          => 'badpassword123',       
+            'interface_locale'  => 'en_US',
+            'is_active'         => 1
+        ]
+    );
+    
+    $user->setRoleId(1);
+    $user->save(); 
+}
+```
 
 ---
 ### 6.0. Customising Magento Business Logic
