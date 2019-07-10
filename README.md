@@ -742,6 +742,21 @@ This section covers **18%** of the exam.
 
 ---
 #### 4.4. Declarative Schema
+Declarative schema in Magento 2.3 allows developers to declare the final desired state of the database and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. Additionally, this approach allows data be deleted when a module is uninstalled - something that previously had to be done separately.
+
+##### Terminology
+Data Patch
+- A class that contains data modification instructions. It can have dependencies on other data or schema patches.
+- Some data patches can be reverted as a module or patch is uninstalled or deleted. Revertable operations are Data Query Language (DQL) and Data Manipulation Language (DML) operations: `INSERT`, `UPDATE`.
+
+Schema Patch
+- A class that contains custom schema modification instructions. Schema patches are used along with declarative schema, but these patches allow complex operations such as:
+    - Adding triggers, stored procedures, or functions
+    - Performing data migration with inside DDL operations
+    - Renaming tables, columns, and other entities
+    - Adding partitions and options to a table
+
+---
 > How do you add a column using declarative schema?
 
 ---
