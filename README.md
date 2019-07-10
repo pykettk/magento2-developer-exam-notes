@@ -1198,6 +1198,8 @@ This section covers **16%** of the exam.
 #### 6.3. Product/Category Relations
 > How do you assign and unassign products to categories?
 
+Navigate to `Catalog > Inventory > Products` in Magento Admin, select the product you wish to add to a category, and use the `Categories` drop down selection options to assign it to categories.
+
 ---
 #### 6.4. Product Behaviour In The Cart
 > How are configurable and bundle products rendered?
