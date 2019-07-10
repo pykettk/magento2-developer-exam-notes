@@ -696,8 +696,21 @@ This section covers **15%** of the exam.
 #### 3.1. Customise The Magento UI Using Themes
 > When would you create a new theme?
 
+You would create a new theme when making design changes to the Magento frontend or admin. This typically involves copying and modifying layout files, templates, and styles to achieve your desired design.
+
 ---
 > How do you define theme hierarchy for a project?
+
+The `theme.xml` file can be used to specify the theme's parent using the `<parent />` node:
+```XML
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>Your Theme Name</title>
+	<parent>Vendor/Theme</parent>
+</theme>
+```
+
+Omitting the `<parent />` node dictates that the theme is the base, or default, theme.
 
 ---
 #### 3.2. Blocks & Templates
