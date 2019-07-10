@@ -816,6 +816,12 @@ This section covers **16%** of the exam.
 #### 6.4. Product Behaviour In The Cart
 > How are configurable and bundle products rendered?
 
+`view/frontend/layout/checkout_cart_item_renderers.xml` define how products are rendered in the cart.
+
+Configurable products are shown as a single line item. It is shown with the parent product's title and the simple product option selected by the customer.
+
+Each product in the Bundle product is rendered as a single line item.
+
 ---
 > How can you create a custom shopping cart renderer?
 
