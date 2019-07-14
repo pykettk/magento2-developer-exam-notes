@@ -690,7 +690,7 @@ bin/magento maintenance:disable
 ```
 
 ---
-#### 2.2. Demonstrate Abilty To Use Frontend Controllers
+#### 2.2. Demonstrate Ability To Use Frontend Controllers
 > How do you identify which module/controller corresponds to a given URL?
 
 `https://your-store.com/catalog/product/view/id/42`
