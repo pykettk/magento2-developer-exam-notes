@@ -1019,7 +1019,7 @@ Schema Patch
 ---
 > How do you add a column using declarative schema?
 
-Create a schema patch file:
+You can create/modify the `etc/db_schema.xml` file, specifying a `<table />` node for the table you are editing and adding a `<column />` node inside to create the new column.
 ```XML
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
@@ -1031,6 +1031,80 @@ Create a schema patch file:
         />
     </table>
 </schema>
+```
+
+You can also create a schema patch file in the `YourCompany\YourModule\Setup\Patch\Schema` namespace:
+```php
+<?php
+namespace YourCompany\YourModule\Setup\Patch\Schema;
+
+use Magento\Framework\DB\Ddl\Table;
+use Magento\Framework\Setup\Patch\SchemaPatchInterface;
+use Magento\Framework\Setup\SchemaSetupInterface;
+
+class YourSchemaPatch implements SchemaPatchInterface
+{
+    /** @var SchemaSetupInterface */
+    private $moduleSchemaSetup;
+
+    /**
+     * YourSchemaPatch Constructor.
+     *
+     * @param SchemaSetupInterface $moduleSchemaSetup
+     */
+    public function __construct(SchemaSetupInterface $moduleSchemaSetup)
+    {
+        $this->moduleSchemaSetup = $moduleSchemaSetup;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function apply()
+    {
+        $this->schemaSetup->startSetup();
+        $table = $this->schemaSetup->getTable('your_table_name');
+        $connection = $this->schemaSetup->getConnection();
+        
+        if ($connection->isTableExists($table)) {
+            // declare new columns to add
+            $newColumns = [
+                'shiny_new_column' => [
+                    'type' => Table::TYPE_TEXT,
+                    'nullable' => true,
+                    'comment' => 'Shiny New Column',
+                ],
+                'another_shiny_column' => [
+                    'type' => Table::TYPE_TEXT,
+                    'nullable' => true,
+                    'comment' => 'OMG More Shinies! :O',
+                ],
+            ];
+
+            foreach ($newColumns as $newColumn => $columnDescription) {
+                $connection->addColumn($table, $newColumn, $columnDescription);
+            }
+        }
+
+        $this->schemaSetup->endSetup();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function getDependencies()
+    {
+        // return [dependencies]
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    public function getAliases()
+    {
+        // return [aliases]
+    }
+}
 ```
 
 **NB:** When adding new columns to a table, you also need to generate the `db_schema_whitelist.json` file.
