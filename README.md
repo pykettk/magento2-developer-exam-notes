@@ -699,6 +699,7 @@ bin/magento maintenance:disable
 
 ---
 > What would you do to create a given URL?
+
 Set the Category and Product `url_key` attributes. You can also create URL rewrites through the Magento Admin path `Marketing > SEO & Search > URL Rewrites`
 
 ---
