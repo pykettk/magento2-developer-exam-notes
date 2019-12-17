@@ -2,20 +2,19 @@
  <img src="https://i.imgur.com/rSyq3MW.png" alt="Book Icon"></a>
 </p>
 
-<h2 align="center">Magento 2 Associate Developer Certification Study Guide</h2>
+<h2 align="center">Magento 2 Developer Certification Exam Notes</h2>
 	
 <div align="center">
 	
 ![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
 ![GitHub last commit (master)](https://img.shields.io/github/last-commit/pykettk/magento2-associate-developer-certification/master.svg)
-![License](https://img.shields.io/github/license/pykettk/magento2-associate-developer-certification.svg)
 
 </div>
 
 ---
 
 <p align="center">
-	A collection of notes for the Magento 2 Associate Developer Certification exam.
+	A collection of notes for the Magento 2 certified developer exams.
 </p>
 
 <br>
@@ -46,26 +45,26 @@ Quite a few answers are very similar, make sure you are confident in the exact f
 
 It may be beneficial to set up a throwaway Magento environment to test some of the things that you revise - such as managing the database using the Declarative Schema; something introduced within Magento 2.3. There were quite a few questions which involved knowledge regarding Data and Schema patches and being aware when to use them.
 
-To define what UI components are used for certain admin options, these are **SOURCE MODELS**, not Backend or Config models.
-
 <br>
 
 ## ⛏️ Exam Structure
-The exam is based on **Magento 2.3.\*** using the **Magento Luma Theme**.
-
-The exam covers both **Open Source & Commerce** versions of Magento.
-
-There are **60 multiple choice questions**.
-
-There is a **90 minute time limit**.
-
-The pass grade is **68%**.
+### Associate Developer
+|       |       |
+| :---: | :---: |
+| Magento Version | 2.3.x |
+| Magento Theme | Luma |
+| Number of Questions | 60 |
+| Time Limit | 90 Minutes |
+| Passing Grade | 68% |
 
 <br>
 
 ## ✍️ Exam Content
 ### 1.0. Magento Architecture & Customisation Techniques
-This section covers **33%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 33% |
+| Professional Developer | 18% |
 
 #### 1.1. Describe the Magento Module-Based Architecture
 > What are the significant steps to add a new module?
@@ -652,7 +651,10 @@ Synchronises module versions in the database with those defined in the codebase.
 
 ---
 ### 2.0 Request Flow Processing
-This section covers **7%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 7% |
+| Professional Developer | 12% |
 
 ---
 #### 2.1. Describe Magento 2 Modes
@@ -726,7 +728,10 @@ In the `url_rewrite` table you will find a row where the `request_path` value is
 
 ---
 ### 3.0. Customising The Magento UI
-This section covers **15%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 15% |
+| Professional Developer | 10% |
 
 #### 3.1. Customise The Magento UI Using Themes
 > When would you create a new theme?
@@ -970,7 +975,10 @@ Includes a certain layout file.
 
 ---
 ### 4.0. Working With Databases In Magento
-This section covers **18%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 18% |
+| Professional Developer | 7% |
 
 #### 4.1. Models, Resource Models, And Collections
 > What are the responsibilities of each of the ORM object types?
@@ -1206,7 +1214,10 @@ Schema patches are used to make custom database schema modifications:
 
 ---
 ### 5.0. Developing With Adminhtml
-This section covers **11%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 11% |
+| Professional Developer | 10% |
 
 #### 5.1. Admin Routes
 > How would you create an admin controller?
@@ -1307,7 +1318,9 @@ public function execute()
 
 ---
 ### 6.0. Customising Magento Business Logic
-This section covers **16%** of the exam.
+| Certification | Exam Content |
+| :-----------: | :----------: |
+| Associate Developer | 16% |
 
 #### 6.1. Product Types
 
