@@ -1766,12 +1766,12 @@ public function execute()
 ```
 
 ---
-### 6.0. Customising Magento Business Logic
+### 11.0. Customising Magento Business Logic
 | Certification | Exam Content |
 | :-----------: | :----------: |
 | Associate Developer | 16% |
 
-#### 6.1. Product Types
+#### 11.1. Product Types
 
 | Product Type | Description |
 | :----------: | :---------: |
@@ -1814,17 +1814,17 @@ The product type model is responsible for:
 - Loading child products, when applicable
 
 ---
-#### 6.2. Category Properties
+#### 11.2. Category Properties
 > How do you create and manage categories?
 
 ---
-#### 6.3. Product/Category Relations
+#### 11.3. Product/Category Relations
 > How do you assign and unassign products to categories?
 
 Navigate to `Catalog > Inventory > Products` in Magento Admin, select the product you wish to add to a category, and use the `Categories` drop down selection options to assign it to categories.
 
 ---
-#### 6.4. Product Behaviour In The Cart
+#### 11.4. Product Behaviour In The Cart
 > How are configurable and bundle products rendered?
 
 `view/frontend/layout/checkout_cart_item_renderers.xml` define how products are rendered in the cart.
@@ -1837,11 +1837,11 @@ Each product in the Bundle product is rendered as a single line item.
 > How can you create a custom shopping cart renderer?
 
 ---
-#### 6.5. Native Shipping Functionality
+#### 11.5. Native Shipping Functionality
 > How do you customize the shipment step of order management?
 
 ---
-#### 6.6. Customer Account Area Customisation
+#### 11.6. Customer Account Area Customisation
 > How would you add another tab in the “My Account” section?
 
 To add an additional menu tab in the customer "My Account" area create the layout file in `Your_Company/Your_Module/view/frontend/layout/customer_account.xml`:
@@ -1875,7 +1875,7 @@ To add an additional menu tab in the customer "My Account" area create the layou
 To customise the "Order History" page create the layout file in `Your_Company/Your_Module/view/frontend/layout/sales_order_history.xml`. The `sales.order.history.info` container is a common location for modifications to be made.
 
 ---
-#### 6.7. Add/Modify Customer Attributes
+#### 11.7. Add/Modify Customer Attributes
 > How do you add or modify customer attributes in a setup script?
 
 Create `Your_Company/Your_Module/Setup/UpgradeData.php` with an `upgrade()` function:
@@ -1890,7 +1890,7 @@ $attribute->save();
 ```
 
 ---
-#### 6.8. Customising Customer Addresses
+#### 11.8. Customising Customer Addresses
 > How do you add another field to the customer address entity using a setup script?
 
 ---
