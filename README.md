@@ -1550,6 +1550,91 @@ Schema patches are used to make custom database schema modifications:
 
 
 ---
+### 5.0. Entity-Attribute-Value (EAV) 
+#### 5.1. EAV Model Concepts
+> Describe the EAV hierarchy structure.
+> What happens when a new attribute is added to the system?
+> What is the role of attribute sets and attribute groups?
+> How are attributes presented in the admin?
+> Describe how EAV data storage works in Magento.
+> Which additional options do you have when saving EAV entities?
+> How do you create customizations based on changes to attribute values?
+> Describe the key differences between EAV and flat table collections.
+> In which situations would you use EAV for a new entity?
+> What are the pros and cons of EAV architecture?
+
+#### 5.2. EAV Loading & Saving
+> Describe the EAV load and save process and differences from the flat table load and save process.
+> What happens when an EAV entity has too many attributes?
+> How does the number of websites/stores affect the EAV load/save process?
+> How would you customize the load and save process for an EAV entity in the situations described here?
+
+#### 5.3. Attribute Management
+> Describe EAV attributes, including the frontend/source/backend structure.
+
+
+
+---
+> How would you add dropdown/multiselect attributes?
+
+
+
+---
+> What other possibilities do you have when adding an attribute (to a product, for example)?
+
+
+
+---
+> Describe how to implement the interface for attribute frontend models.
+
+
+
+---
+> What is the purpose of this interface?
+
+
+
+---
+> How can you render your attribute value on the frontend?
+
+
+
+---
+> Identify the purpose and describe how to implement the interface for attribute source models.
+
+
+
+---
+> For a given dropdown/multiselect attribute, how can you specify and manipulate its list of options?
+
+
+
+---
+> Identify the purpose and describe how to implement the interface for attribute backend models.
+
+
+
+---
+> How (and why) would you create a backend model for an attribute?
+
+
+
+---
+> Describe how to create and customize attributes.
+
+
+
+---
+> How would you add a new attribute to the product, category, or customer entities?
+
+
+
+---
+> What is the difference between adding a new attribute and modifying an existing one?
+
+
+
+---
 ### 6.0. Developing With Adminhtml
 | Certification | Exam Content |
 | :-----------: | :----------: |
@@ -1670,7 +1755,7 @@ public function execute()
             'lastname'          => 'Surname',
             'email'             => 'admin@test.com',
             'password'          => 'badpassword123',       
-            'interface_locale'  => 'en_US',
+5
             'is_active'         => 1
         ]
     );
