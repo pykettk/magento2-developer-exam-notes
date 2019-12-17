@@ -966,6 +966,16 @@ The `theme.xml` file can be used to specify the theme's parent using the `<paren
 Omitting the `<parent />` node dictates that the theme is the base, or default, theme.
 
 ---
+> How do you identify which exact theme file is used in different situations?
+
+
+
+---
+> How can you override native files?
+
+
+
+---
 #### 3.2. Blocks & Templates
 > How do you assign a template to a block?
 
@@ -992,9 +1002,32 @@ To assign a template to an existing block, pass an argument to the block:
     </action>
 </referenceBlock>
 ```
+---
+> Which objects are accessible from the block?
+
+
 
 ---
-#### 3.3. Identify Different Types Of Blocks
+> What is the typical block’s role?
+
+
+
+---
+> In what cases would you put your code in the `_prepareLayout()`, `_beforeToHtml()`, and `_toHtml()` methods?
+
+
+
+---
+> How would you use events fired in the abstract block?
+
+
+
+---
+> Describe how blocks are rendered and cached.
+
+
+
+---
 > When would you use non-template block types?
 
 | Block Type | Path | Use |
@@ -1003,7 +1036,12 @@ To assign a template to an existing block, pass an argument to the block:
 | ListText | `vendor/magento/framework/View/Element/Text/ListTest.php` | Output each of the child blocks |
 
 ---
-#### 3.4. Magento Layout XML
+> In what situation should you use a template block or other block types?
+
+
+
+---
+#### 3.3. Magento Layout XML
 > How do you use layout XML directives in your customizations?
 
 Layout XML is what links templates to blocks and there are a number of directives available for use.
@@ -1182,9 +1220,28 @@ Includes a certain layout file.
 ---
 > How do you register a new layout file?
 
+
+
 ---
-#### 3.5. Create & Add Code & Markup To A Page
-> How do you add new content to existing pages using layout XML?
+> How do you pass variables from layout to block?
+
+
+
+---
+#### 3.4. Utlise JavaScript in Magento
+> Which JavaScript modules are are suited for which tasks?
+
+
+
+---
+> In which situation would you use UI Components over a regular JavaScript module?
+
+
+
+---
+> Describe the use of `requirejs-config.js`, `x-magento-init`, `data-mage-init`.
+
+
 
 ---
 ### 4.0. Working With Databases In Magento
