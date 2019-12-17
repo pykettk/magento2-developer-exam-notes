@@ -743,7 +743,7 @@ Synchronises module versions in the database with those defined in the codebase.
 | Professional Developer | 12% |
 
 ---
-#### 2.1. Describe Magento 2 Modes
+#### 2.1. Magento 2 Modes & Application Initialisation
 > Understand the pros and cons of using developer mode or production mode.
 
 ##### Production
@@ -766,6 +766,11 @@ As it's name suggests, this mode is intended to be used during development only.
 - Performs slower
 
 ---
+> When do you use default mode?
+
+
+
+---
 > How do you enable/disable maintenance mode?
 
 Maintenance mode can be enabled and disabled via the command line:
@@ -778,20 +783,28 @@ bin/magento maintenance:disable
 ```
 
 ---
+> Identify the steps for application initialisation.
+
+
+
+---
+> How would you design a customization that should act on every request and capture output data regardless of the controller?
+
+
+
+---
 #### 2.2. Demonstrate Ability To Use Frontend Controllers
-> How do you identify which module/controller corresponds to a given URL?
-
-`https://your-store.com/catalog/product/view/id/42`
+> Describe front controller responsibilities.
 
 
 
 ---
-> What would you do to create a given URL?
+> In which situations will the front controller be involved in execution, and how can it be used in the scope of customizations?
 
-Set the Category and Product `url_key` attributes. You can also create URL rewrites through the Magento Admin path `Marketing > SEO & Search > URL Rewrites`
+
 
 ---
-#### 2.3. URL Rewrites
+#### 2.3. URL Processing
 URL rewrites provide a user-friendly URL to the customer in place of a cumbersome Magento URL. These values are stored in the `url_rewrite` table.
 
 ---
@@ -811,6 +824,120 @@ You can change a URL by creating a URL rewrite. The following actions also cause
 > How do you determine which page corresponds to a given user-friendly URL?
 
 In the `url_rewrite` table you will find a row where the `request_path` value is the user-friendly URL. The corresponding `target_path` value is the internal Magento page. The `Magento_UrlRewrite` module contains a router that checks to see whether the given URL can be matched to a `request_path` in the `url_rewrite` table, redirecting to the `target_path` if a match is found.
+
+---
+> How do you identify which module/controller corresponds to a given URL?
+
+`https://your-store.com/catalog/product/view/id/42`
+
+
+
+---
+> What would you do to create a given URL?
+
+Set the Category and Product `url_key` attributes. You can also create URL rewrites through the Magento Admin path `Marketing > SEO & Search > URL Rewrites`
+
+---
+> Describe how action controllers and results function.
+
+
+
+---
+> How do controllers interact with each other?
+
+
+
+---
+> How are different response types generated?
+
+
+
+---
+#### 2.4. Customising Request Routing
+> Describe the request routing flow in Magento 2.
+
+
+
+---
+> When is it necessary to create a new router or customise an existing router?
+
+
+
+---
+> How do you handle custom 404 pages?
+
+
+
+---
+#### 2.5. Layout Initialisation Process
+> Determine how layout is compiled.
+
+
+
+---
+> How would you debug your `layout.xml` files and verify the right layout instructions are used?
+
+
+
+---
+> Determine how HTML output is rendered.
+
+
+
+---
+> How does Magento flush output?
+
+
+
+---
+> What mechanisms exist to access and customise output?
+
+
+
+---
+> How do you add new elements to pages introduced by a given module?
+
+
+
+---
+> How do you identify which exact `layout.xml` file is processed in a given scope?
+
+
+
+---
+> How does Magento treat layout XML files with the same names in different modules?
+
+
+
+---
+> Identify the differences between admin and frontend scopes.
+
+
+
+---
+> What differences exist for layout initialization for the admin scope?
+
+
+
+---
+#### 2.6. Block Template Structures
+> Identify and understand root templates, empty.xml, and page_layout.
+
+
+
+---
+> How are page structures defined, including number of columns, which basic containers are present, etc.?
+
+
+
+---
+> Describe the role of blocks and templates in the request flow.
+
+
+
+---
+> In which situations would you create a new block or a new template?
+
 
 ---
 ### 3.0. Customising The Magento UI
