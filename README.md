@@ -123,6 +123,16 @@ Example:
 > When would you place a module in the app/code folder versus another location?
 
 ---
+> How do different modules interact with each other?
+
+
+
+---
+> What side effects can come from this interaction?
+
+
+
+---
 #### 1.2. Describe the Magento Directory Structure
 > How do you locate different files in Magento?
 
@@ -414,6 +424,31 @@ Plugins have the following limitations:
 - **Do not** work with `static` functions
 
 ---
+> How do multiple plugins interact?
+
+
+
+---
+> How can the plugin execution order be controlled?
+
+
+
+---
+> How do you debug a plugin if it doesn’t work?
+
+
+
+---
+> What are the limitations of using plugins for customization?
+
+
+
+---
+> In which cases should plugins be avoided?
+
+
+ 
+---
 #### 1.6. Configure Event Observers & Scheduled Jobs
 Observers listen for events that are triggered in Magento. Scheduled jobs perform an action at a specified interval.
 
@@ -457,6 +492,21 @@ To configure a scheduled job you need to assign it a name, specify the function 
     </group>
 </config>
 ```
+
+---
+> Which parameters are used in configuration?
+
+
+
+---
+> How can configuration interact with server configuration?
+
+
+
+---
+> Identify the function and proper use of automatically available events, for example *_load_after, etc.
+
+
 
 ---
 #### 1.7. Utilise the CLI
@@ -648,6 +698,42 @@ Checks whether the Magento database needs to be upgraded.
 
 ##### `setup:upgrade`
 Synchronises module versions in the database with those defined in the codebase.
+
+---
+#### 1.8. Managing the Cache
+> Describe the cache types.
+
+
+
+---
+> What tools are there to manage the cache?
+
+
+
+---
+> How do you add dynamic content to pages served from the full page cache?
+
+
+
+---
+> How would you clean the cache?
+
+
+
+---
+> When would you refresh/flush the cache storage?
+
+
+
+---
+> How do you clear the cache programmatically?
+
+
+
+---
+> What mechanisms are available for clearing all or part of the cache?
+
+
 
 ---
 ### 2.0 Request Flow Processing
