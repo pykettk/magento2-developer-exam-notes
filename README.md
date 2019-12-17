@@ -1550,34 +1550,62 @@ Schema patches are used to make custom database schema modifications:
 
 
 ---
-### 5.0. Developing With Adminhtml
+### 6.0. Developing With Adminhtml
 | Certification | Exam Content |
 | :-----------: | :----------: |
 | Associate Developer | 11% |
 | Professional Developer | 10% |
 
-#### 5.1. Admin Routes
-> How would you create an admin controller?
+#### 6.1. Adminhtml Structure/Architecture
+> Describe the difference between Adminhtml and frontend.
+
+
 
 ---
-> How do you ensure the right level of security for a new controller?
+> What additional tools and requirements exist in the admin?
+
+
 
 ---
-#### 5.2. System Configuration & Scopes
+#### 6.2. Form & Grid Widgets
+> Define form structure, form templates, grids, grid containers, and elements.
+
+
+
+---
+> What steps are needed to display a grid or form?
+
+
+
+--- 
+> How is data provided to the grid or form? How can this be process be customized or extended?
+
+
+
+---
+> Describe how to create a simple form and grid for a custom entity.
+
+
+
+---
+> Given a specific entity with different types of fields (text, dropdown, image, file, date, and so on) how would you create a grid and a form?
+
+
+
+---
+#### 6.3. System Configuration & Scopes
 > How would you add a new system configuration option?
 
 ---
 > What is the difference in this process for different option types (secret, file)?
 
 ---
-#### 5.3. ACL
-> How would you add a new ACL resource to a new entity?
+> How do you access system configuration options programmatically?
+
+
 
 ---
-> How do you manage the existing ACL hierarchy?
-
----
-#### 5.4. Setup A Menu Item
+#### 6.4. ACL & User Permissions
 > How do you add a new menu item to a given tab?
 
 Adminhtml menu items are configured in `etc/adminhtml/menu.xml`. To add a new menu item, edit this file:
@@ -1610,7 +1638,6 @@ Adminhtml menu items are configured in `etc/adminhtml/menu.xml`. To add a new me
 Do not specify a `parent` attribute in the `<add />` node.
 
 ---
-#### 5.5. Create User Permissions
 > How are menu items related to ACL permissions?
 
 Menu items are not shown to users with insufficient permissions to access them.
