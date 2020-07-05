@@ -1,6 +1,8 @@
-<p align="center">
- <img src="https://i.imgur.com/rSyq3MW.png" alt="Book Icon"></a>
-</p>
+<div align="center">
+
+![](https://i.imgur.com/I8i36kp.png)
+
+</div>
 
 <h2 align="center">Magento 2 Developer Certification Exam Notes</h2>
 
