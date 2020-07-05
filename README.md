@@ -3,7 +3,11 @@
 </p>
 
 <h2 align="center">Magento 2 Developer Certification Exam Notes</h2>
-	
+
+<p align="center">
+	A collection of notes for the Magento 2 certified developer exams.
+</p>
+
 <div align="center">
 	
 ![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
@@ -13,9 +17,13 @@
 
 ---
 
-<p align="center">
-	A collection of notes for the Magento 2 certified developer exams.
-</p>
+<div align="center">
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/pykettk)
+
+</div>
+
+---
 
 <br>
 
