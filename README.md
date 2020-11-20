@@ -12,7 +12,7 @@
 
 <div align="center">
 	
-![Magento 2.4](https://img.shields.io/badge/Magento-2.4ec6611.svg)
+![Magento 2.4](https://img.shields.io/badge/Magento-2.4-ec6611.svg)
 ![GitHub last commit (master)](https://img.shields.io/github/last-commit/pykettk/magento2-associate-developer-certification/master.svg)
 
 </div>
