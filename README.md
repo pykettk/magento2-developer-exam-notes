@@ -132,6 +132,10 @@ Example:
 ---
 > When would you place a module in the app/code folder versus another location?
 
+Custom built modules and modules you build to extend other functionality are placed in the `app/code/` directory.
+Other modules, including extensions and the Magento 2 core modules, are placed in the `vendor/` directory as they
+are installed via Composer.
+
 ---
 > How do different modules interact with each other?
 
@@ -304,6 +308,9 @@ Configures tabs, sections, groups, and fields found in `Store > Configuration` i
 ---
 > How can you fetch a system configuration value programmatically?
 
+You can use the functions contained within the `Magento\Framework\App\Config\ScopeConfigInterface` class, passing the 
+configuration path as the minimum required parameter e.g. `web/secure/base_url`.
+
 ---
 > How can you override system configuration values for a given store using XML configuration?
 
@@ -436,12 +443,39 @@ Plugins have the following limitations:
 ---
 > How do multiple plugins interact?
 
+The `sortOrder` from the plugins declared in `di.xml` determines the plugin’s prioritisation when more than one plugin is observing the same method.
 
+The `Magento\Framework\Interception\PluginListInterface` which is implemented by `Magento\Framework\Interception\PluginList\PluginList`
+is responsible to define when to call the `befor`e, `around`, or `after` methods respecting this prioritisation.
+
+If two or more plugins have the same `sortOrder` value or do not specify it, the component load order declared in the `<sequence>` node from
+`module.xml` and the area will define the merge sequence. The component load order can be checked in `app/etc/config.php`.
+
+Magento executes plugins using these rules during each plugin execution in two main flows:
+
+1. Before the execution of the observed method, starting from lowest to highest `sortOrder`.
+    - Magento executes the current plugin’s `before` method.
+    - Then the current plugin’s `around` method is called.
+        - The first part of the plugin’s `around` method is executed.
+        - The `around` method executes the callable.
+            - If there is another plugin in the chain, all subsequent plugins are wrapped in an independent sequence loop and the execution starts another flow.
+            - If the current plugin is the last in the chain, the observed method is executed.
+        - The second part of the `around` method is executed.
+    - Magento moves on to the next plugin.
+
+2. Following the execution flow, starting from lowest to highest `sortOrder` in the current sequence plugins loop.
+    - The current plugin’s `after` method is executed.
+    - Magento moves on to the next plugin.
+    
+As a result of these rules, the execution flow of an observed method is affected not only by the prioritisation of the plugins,
+but also by their implemented methods.
+
+Examples of how this prioritisation is realised can be found in the [Magento 2 dev docs regarding plugins and interceptors])https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html#examples.
 
 ---
 > How can the plugin execution order be controlled?
 
-
+The `sortOrder` attribute defines the order in which to execute plugins, starting from the lowest and working through to the highest.
 
 ---
 > How do you debug a plugin if it doesn’t work?
@@ -451,7 +485,14 @@ Plugins have the following limitations:
 ---
 > What are the limitations of using plugins for customization?
 
-
+Plugins can not be used on the following:
+- Final methods
+- Final classes
+- Non-public methods
+- Class methods (such as static methods)
+- `__construct`
+- Virtual types
+- Objects that are instantiated before `Magento\Framework\Interceptio`n is bootstrapped
 
 ---
 > In which cases should plugins be avoided?
@@ -778,7 +819,16 @@ As it's name suggests, this mode is intended to be used during development only.
 ---
 > When do you use default mode?
 
+As its name implies, `default` mode is how Magento operates if no other mode is specified.
+It enables you to deploy the Magento application on a single server without changing any settings.
+However, `default` mode is not as optimized for production.
 
+To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
+
+In `default` mode:
+- Errors are logged to the file reports at server, and never shown to a user
+- Static view files are cached
+- Not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 ---
 > How do you enable/disable maintenance mode?
@@ -1235,7 +1285,72 @@ Includes a certain layout file.
 ---
 > How do you pass variables from layout to block?
 
+Information can be passed from layout XML files to blocks using the `<argument />` node.
+These directives must always be enclosed within `<arguments />` directives. Argument values set in a layout file
+are added to the block's `data` array and can be accessed in templates using the `getData('argumentName')` and
+`hasData('argumentName')` functions. The latter returns a boolean defining whether there’s any value set.
 
+| Attribute | Description | Values | Required |
+| :-------: | :---------: | :----: | :------: |
+| `name` | Argument name. | Must be unique. | Yes |
+| `xsi:type` | Argument type. | `string` / `boolean` / `object` / `number` / `null` / `array` / `options` / `url` / `helper` | Yes |
+| `translate` |  | `true` or `false` | No |
+
+```XML
+<arguments>
+    <!-- String -->
+    <argument name="stringArgName" xsi:type="string">
+        Some String
+    </argument>
+    
+    <!-- Boolean -->
+    <argument name="booleanArgName" xsi:type="boolean">
+        true
+    </argument>
+    
+    <!-- Object -->
+    <argument name="objectArgName" xsi:type="object">
+        <!-- Must implement `Magento\Framework\View\Element\Block\ArgumentInterface` -->
+        Namespace\To\Your\Class
+    </argument>
+    
+    <!-- Number -->
+    <argument name="numberArgName" xsi:type="number">
+        42
+    </argument>
+    
+    <!-- Null -->
+    <argument name="nullArgName" xsi:type="null" />
+    
+    <!-- Array -->
+    <argument name="arrayArgName" xsi:type="array">
+        <item name="arrayKeyOne" xsi:type="string">First Item</item>
+        <item name="arrayKeyTwo" xsi:type="object">Namespace\Of\Your\Class</item>
+        ...
+    </argument>
+    
+    <!-- Options -->
+    <argument name="optionsArgName" xsi:type="options">
+        <!-- Must implement `Magento\Framework\Data\OptionSourceInterface` -->
+        Namespace\Of\Your\Class
+    </argument>
+    
+    <!-- URL -->
+    <argument name="urlArgName"
+              xsi:type="url"
+              path="your/url/path"
+    />
+    
+    <!-- Helper -->
+    <argument name="helperArgName" 
+              xsi:type="string"
+              helper="Namespace\To\Your\Helper\Class::helperFunction">
+        <param name="paramName">paramValue</param>
+    </argument>
+<arguments>
+```
+
+**NB:** The `helper` can only use public functions.
 
 ---
 #### 3.4. Utlise JavaScript in Magento
@@ -1557,7 +1672,8 @@ Schema patches are used to make custom database schema modifications:
 ---
 > How to manage dependencies between patch files?
 
-
+Dependencies between patch files are managed via the patch file's `getDependencies` method. This method should
+return an array of all of the patch files that are required to be executed **before** it.
 
 ---
 ### 5.0. Entity-Attribute-Value (EAV) 
@@ -1697,7 +1813,8 @@ Schema patches are used to make custom database schema modifications:
 ---
 > How do you access system configuration options programmatically?
 
-
+You can use the functions contained within the `Magento\Framework\App\Config\ScopeConfigInterface` class, passing the 
+configuration path as the minimum required parameter e.g. `web/secure/base_url`.
 
 ---
 #### 6.4. ACL & User Permissions
@@ -1921,4 +2038,3 @@ $attribute->save();
 [Product Types](https://docs.magento.com/m2/ee/user_guide/catalog/product-types.html)
 
 [Declarative Schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/)
-
