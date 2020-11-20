@@ -12,7 +12,7 @@
 
 <div align="center">
 	
-![Magento 2.3](https://img.shields.io/badge/Magento-2.3-ec6611.svg)
+![Magento 2.4](https://img.shields.io/badge/Magento-2.4ec6611.svg)
 ![GitHub last commit (master)](https://img.shields.io/github/last-commit/pykettk/magento2-associate-developer-certification/master.svg)
 
 </div>
@@ -61,7 +61,7 @@ It may be beneficial to set up a throwaway Magento environment to test some of t
 ### Associate Developer
 |       |       |
 | :---: | :---: |
-| Magento Version | 2.3.x |
+| Magento Version | 2.4.x |
 | Magento Theme | Luma |
 | Number of Questions | 60 |
 | Time Limit | 90 Minutes |
